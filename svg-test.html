@@ -5,24 +5,38 @@
 </head>
 
 <style>
-    .svg {
+    .size {
         width: 60px;
         height: 40px;
+    }
+    .flag_encoded {
+        background: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGhlaWdodD0iNDgwIiB3aWR0aD0iNjQwIj4KICAgIDxwYXRoIGQ9Ik0wIDBoNjQwdjE2MEgweiIgZmlsbD0icmVkIi8+CiAgICA8cGF0aCBkPSJNMCAxNjBoNjQwdjE2MEgweiIgZmlsbD0iIzAwZiIvPgogICAgPHBhdGggZD0iTTAgMzIwaDY0MHYxNjBIMHoiIGZpbGw9Im9yYW5nZSIvPgo8L3N2Zz4K) no-repeat left center;
+    }
+    .image_as_background {
+        background-image: url(./flag.svg);
     }
 </style>
 
 <body>
 
     <div>
-        SVG as standalone file in image:
-        <img class="svg" src="./flag.svg"/>
+        SVG as background image via data-uri base64 encoding:
+        <div class="size flag_encoded"></div>
     </div>
 
-    <br/>
+    <div>
+        SVG as background-image with link to file:
+        <div class="size image_as_background"></div>
+    </div>
+
+    <div>
+        SVG as standalone file in image:
+        <img class="size" src="./flag.svg"/>
+    </div>
 
     <div>
         Same SVG but from a bundle:
-        <svg class="svg"><use href="./bundle.svg#flag"/></svg>
+        <svg class="size"><use href="./bundle.svg#flag"/></svg>
     </div>
 
 </body>
